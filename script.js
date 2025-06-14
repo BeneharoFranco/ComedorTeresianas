@@ -309,7 +309,7 @@ var Stars = function(args) {
     this.render = function() {
         context.fillStyle = 'rgba(1, 4, 35, 0.8)';
         context.fillRect(0, 0, canvas.width, canvas.height);
-        context.strokeStyle = "white";
+        context.strokeStyle = "greenyellow";
         for (var i = 0; i < this.stars.length; i++) this.stars[i].update();
     }
 
