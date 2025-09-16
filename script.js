@@ -85,9 +85,56 @@ function updateSchedule(date) {
           break;
         case 17: message = 'Puré de guisantes. Pizza casera con tomate natural'
           break;
+        default: message = 'Día no lectivo';
       }
       break;
-    case 'Noviembre': break;
+    case 'Noviembre': 
+      switch (currentDateNum) {
+        //semana roja
+        case 4: message = 'Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas'
+          break;
+        case 5: message = 'Ensalada de caballa. Lomo asado con menestra de verduras'
+          break;
+        case 6: message = 'Arroz con pollo y verduras. Tacos de pescado con ensalada natural'
+          break;
+        case 7: message = 'Crema de verduras. Tortilla a Ia paisana con tomates aliñados'
+          break;
+        //semana amarilla
+        case 10: message = 'Crema de calabaza. Tortilla de calabacín y papas al horno'
+          break;
+        case 11: message = 'Sopa de Ternera. Estofado de pollo con verduras'
+          break;
+        case 12: message = 'Potaje de verduras y legumbres. Churros de pescado al horno con ensalada'
+          break;
+        case 13: message = 'Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas'
+          break;
+        case 14: message = 'Crema de lentejas. Pescado en salsa con papas sancochadas'
+          break;
+          //semana azul
+        case 17: message = 'Ensalada César. Pollo al horno con papas arrugadas'
+          break;
+        case 18: message = 'Potaje de lentejas Y verduras. Tortilla española al horno. Ensalada natural.'
+          break;
+        case 19: message = 'Crema de calabaza. Croquetas de pollo al horno con menestra de verduras.'
+          break;
+        case 20: message = 'Sopa de verduras Salmón a la plancha con verduras asadas y cuscús integral'
+          break;
+        case 21: message = 'Puré de guisantes. Pizza casera con tomate natural'
+          break;
+        //semana celeste.
+        case 24: message = 'Ensalada de Garbanzos. Estofado de ternera con papas y verduras'
+          break;
+        case 25: message = 'Sopa de pollo. Filete de fogonero a la plancha con papas sancochadas'
+          break;
+        case 26: message = 'Macarrones integrales con tomate natural. Hamburguesa de pollo con ensalada natural'
+          break;
+        case 27: message = 'Potaje de lentejas con verduras. Pescado al vapor con aliño de limón, ajo y perejil y ensalada verde'
+          break;
+        case 28: message = 'Crema de verduras y judías. Tortilla a la paisana con ensalada'
+          break;
+      default: message = 'Día no lectivo';
+    }
+    break;
     case 'Diciembre': break;
     case 'Enero': break;
     case 'Febrero':
