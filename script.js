@@ -20,7 +20,9 @@ function updateSchedule(date) {
           break;
         case 10: message = 'Crema de calabaza. Croquetas de pollo al horno con menestra de verduras.'
           break;
-        case 12: message = 'Sopa de verduras Salmón a la plancha con verduras asadas y cuscús integral'
+        case 11: message = 'Sopa de verduras Salmón a la plancha con verduras asadas y cuscús integral'
+          break;
+        case 12: message = 'Puré de guisantes. Pizza casera con tomate natural'
           break;
         //semana celeste.
         case 15: message = 'Ensalada de Garbanzos. Estofado de ternera con papas y verduras'
@@ -45,9 +47,9 @@ function updateSchedule(date) {
         case 26: message = 'Guiso de lentejas. Croquetas de pescado al horno con ensalada'
           break;
         //semana roja
-        case 22: message = 'Sopa de pescado. Pechuga de pollo a la plancha con ensalada'
+        case 29: message = 'Sopa de pescado. Pechuga de pollo a la plancha con ensalada'
           break;
-        case 23: message = 'Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas'
+        case 30: message = 'Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas'
           break;
         default: message = 'Día no lectivo';
       }
