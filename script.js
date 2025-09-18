@@ -104,7 +104,7 @@ function updateSchedule(date) {
             "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Octubre":
@@ -199,7 +199,7 @@ function updateSchedule(date) {
             "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Noviembre":
@@ -279,7 +279,7 @@ function updateSchedule(date) {
             "Crema de verduras y judías. Tortilla a la paisana con ensalada";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Diciembre":
@@ -334,7 +334,7 @@ function updateSchedule(date) {
           message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Enero":
@@ -408,7 +408,7 @@ function updateSchedule(date) {
             "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Febrero":
@@ -491,7 +491,7 @@ function updateSchedule(date) {
             "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Marzo":
@@ -575,7 +575,7 @@ function updateSchedule(date) {
             "Crema de verduras y judías. Tortilla a la paisana con ensalada";
           break;
         default:
-          message = "Día no lectivo";
+          message = "Día no lectivo u\{1f3c4}";
       }
       break;
     case "Abril":
