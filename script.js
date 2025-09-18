@@ -579,12 +579,229 @@ function updateSchedule(date) {
       }
       break;
     case "Abril":
+      switch (currentDateNum) {
+        //semana verde
+        case 6:
+          message =
+            "Potaje de berros y legumbres. Pechuga de pollo a la plancha con verduras";
+          break;
+        case 7:
+          message = "Arroz tres delicias. Atún a la plancha con ensalada";
+          break;
+        case 8:
+          message = "Crema de calabacín. Quiché de verduras, queso y jamón";
+          break;
+        case 9:
+          message =
+            "Sopa de estrellitas. Albóndigas de pollo con papas parisinas";
+          break;
+        case 10:
+          message =
+            "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
+          break;
+        //semana roja
+        case 13:
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+          break;
+        case 14:
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          break;
+        case 15:
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          break;
+        case 16:
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+          break;
+        case 17:
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
+          break;
+        //semana amarilla
+        case 20:
+          message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
+          break;
+        case 21:
+          message = "Sopa de Ternera. Estofado de pollo con verduras";
+          break;
+        case 22:
+          message =
+            "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
+          break;
+        case 23:
+          message =
+            "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
+          break;
+        case 24:
+          message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          break;
+        //semana azul
+        case 27:
+          message = "Ensalada César. Pollo al horno con papas arrugadas";
+          break;
+        case 28:
+          message =
+            "Potaje de lentejas Y verduras. Tortilla española al horno. Ensalada natural.";
+          break;
+        case 29:
+          message =
+            "Crema de calabaza. Croquetas de pollo al horno con menestra de verduras.";
+          break;
+        case 30:
+          message =
+            "Sopa de verduras Salmón a la plancha con verduras asadas y cuscús integral";
+          break;
+        default:
+          message = "Día no lectivo \u{1f3c4}";
+      }
       break;
     case "Mayo":
+      switch (currentDateNum) {
+        //semana celeste.
+        case 5:
+          message =
+            "Sopa de pollo. Filete de fogonero a la plancha con papas sancochadas";
+          break;
+        case 6:
+          message =
+            "Macarrones integrales con tomate natural. Hamburguesa de pollo con ensalada natural";
+          break;
+        case 7:
+          message =
+            "Potaje de lentejas con verduras. Pescado al vapor con aliño de limón, ajo y perejil y ensalada verde";
+          break;
+        case 8:
+          message =
+            "Crema de verduras y judías. Tortilla a la paisana con ensalada";
+          break;
+        //semana verde
+        case 11:
+          message =
+            "Potaje de berros y legumbres. Pechuga de pollo a la plancha con verduras";
+          break;
+        case 12:
+          message = "Arroz tres delicias. Atún a la plancha con ensalada";
+          break;
+        case 13:
+          message = "Crema de calabacín. Quiché de verduras, queso y jamón";
+          break;
+        case 14:
+          message =
+            "Sopa de estrellitas. Albóndigas de pollo con papas parisinas";
+          break;
+        case 15:
+          message =
+            "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
+          break;
+        //semana roja
+        case 18:
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+          break;
+        case 19:
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          break;
+        case 20:
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          break;
+        case 21:
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+          break;
+        case 22:
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
+          break;
+        //semana amarilla
+        case 25:
+          message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
+          break;
+        case 26:
+          message = "Sopa de Ternera. Estofado de pollo con verduras";
+          break;
+        case 27:
+          message =
+            "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
+          break;
+        case 28:
+          message =
+            "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
+          break;
+        case 29:
+          message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          break;
+        default:
+          message = "Día no lectivo \u{1f3c4}";
+      }
       break;
     case "Junio":
+      switch (currentDateNum) {
+      //semana azul
+        case 1:
+          message = "Ensalada César. Pollo al horno con papas arrugadas";
+          break;
+        case 2:
+          message =
+            "Potaje de lentejas Y verduras. Tortilla española al horno. Ensalada natural.";
+          break;
+        case 3:
+          message =
+            "Crema de calabaza. Croquetas de pollo al horno con menestra de verduras.";
+          break;
+        case 4:
+          message =
+            "Sopa de verduras Salmón a la plancha con verduras asadas y cuscús integral";
+          break;
+        case 5:
+          message = "Puré de guisantes. Pizza casera con tomate natural";
+          break;
+        //semana celeste.
+        case 8:
+          message =
+            "Ensalada de Garbanzos. Estofado de ternera con papas y verduras";
+          break;
+        case 9:
+          message =
+            "Sopa de pollo. Filete de fogonero a la plancha con papas sancochadas";
+          break;
+        case 10:
+          message =
+            "Macarrones integrales con tomate natural. Hamburguesa de pollo con ensalada natural";
+          break;
+        case 11:
+          message =
+            "Potaje de lentejas con verduras. Pescado al vapor con aliño de limón, ajo y perejil y ensalada verde";
+          break;
+        case 12:
+          message =
+            "Crema de verduras y judías. Tortilla a la paisana con ensalada";
+          break;
+        //semana verde
+        case 15:
+          message =
+            "Potaje de berros y legumbres. Pechuga de pollo a la plancha con verduras";
+          break;
+        case 16:
+          message = "Arroz tres delicias. Atún a la plancha con ensalada";
+          break;
+        case 17:
+          message = "Crema de calabacín. Quiché de verduras, queso y jamón";
+          break;
+        case 18:
+          message =
+            "Sopa de estrellitas. Albóndigas de pollo con papas parisinas";
+          break;
+        case 19:
+          message =
+            "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
+          break;
+        default:
+          message = "Día no lectivo \u{1f3c4}";
+      }
       break;
-
     default:
       message = "";
   }
