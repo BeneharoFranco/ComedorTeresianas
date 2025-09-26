@@ -10,16 +10,14 @@ body {
   overflow: hidden;
 }
 
-canvas {
-  /* Añadir estas reglas para el canvas */
-  position: absolute;
+/*canvas { /* Añadir estas reglas para el canvas */
+/* position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  /* Asegura que el canvas esté detrás del contenido principal */
-}
+  z-index: -1;  Asegura que el canvas esté detrás del contenido principal */
+/*}*/
 
 .container {
   background-color: white;
