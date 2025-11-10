@@ -218,22 +218,25 @@ function updateSchedule(date) {
         case 7:
           message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
           break;
-        //semana amarilla
+        //semana amarilla modificada a roja
         case 10:
-          message = "¿Crema de calabaza. Tortilla de calabacín y papas al horno?";
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
           break;
         case 11:
-          message = "¿Sopa de Ternera. Estofado de pollo con verduras?";
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
           break;
         case 12:
-          message =
-            "¿Potaje de verduras y legumbres. Churros de pescado al horno con ensalada?";
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
           break;
         case 13:
-          message ="¿Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas?";
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
           break;
         case 14:
-          message = "¿Crema de lentejas. Pescado en salsa con papas sancochadas?";
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         //semana azul
         case 17:
@@ -825,7 +828,7 @@ document
   .addEventListener("click", () => updateDay(0));
 
 //Aviso cambio de menú
-alert("Disculpen las molestias. He detectado que el comedor a cambiado la semana ROJA por la semana AMARILLA. Ya he modificado el cambio.")
+alert("Se modifica la semana AMARILLA por la semana ROJA.")
 
 
 // Inicializar con la fecha actual
