@@ -828,7 +828,7 @@ document
   .addEventListener("click", () => updateDay(0));
 
 //Aviso cambio de menú
-alert("Se esta semana se cambia la AMARILLA por la semana ROJA.")
+alert("Esta semana se cambia la AMARILLA por la semana ROJA.")
 
 
 // Inicializar con la fecha actual
