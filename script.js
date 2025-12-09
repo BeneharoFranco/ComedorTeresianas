@@ -206,7 +206,7 @@ function updateSchedule(date) {
       switch (currentDateNum) {
         //semana roja modificada a amarilla
         case 4:
-          message ="Sopa de Ternera. Estofado de pollo con verduras";
+          message = "Sopa de Ternera. Estofado de pollo con verduras";
           break;
         case 5:
           message = "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
@@ -299,39 +299,40 @@ function updateSchedule(date) {
           message =
             "Sopa de estrellitas. Albóndigas de pollo con papas parisinas";
           break;
-        //semana roja
-        case 9:
-          message =
-            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
-          break;
-        case 10:
-          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
-          break;
-        case 11:
-          message =
-            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
-          break;
-        case 12:
-          message =
-            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
-          break;
         //semana amarilla
-        case 15:
-          message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
-          break;
-        case 16:
+        case 9:
           message = "Sopa de Ternera. Estofado de pollo con verduras";
           break;
-        case 17:
+        case 10:
           message =
             "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
           break;
-        case 18:
+        case 11:
           message =
             "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
           break;
-        case 19:
+        case 12:
           message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          break;
+        //semana roja
+        case 15:
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+          break;
+        case 16:
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          break;
+        case 17:
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          break;
+        case 18:
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+          break;
+        case 19:
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         default:
           message = "Día no lectivo \u{1f3c4}";
@@ -387,25 +388,23 @@ function updateSchedule(date) {
           message =
             "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
           break;
-        //semana roja
-        case 29:
-          message =
-            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+        //semana amarilla
+        case 26:
+          message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
           break;
         case 27:
-          message =
-            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          message = "Sopa de Ternera. Estofado de pollo con verduras";
           break;
         case 28:
-          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          message =
+            "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
           break;
         case 29:
           message =
-            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+            "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
           break;
         case 30:
-          message =
-            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
+          message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
           break;
         default:
           message = "Día no lectivo \u{1f3c4}";
@@ -413,23 +412,25 @@ function updateSchedule(date) {
       break;
     case "Febrero":
       switch (currentDateNum) {
-        //semana amarilla
+        //semana roja
         case 2:
-          message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
           break;
         case 3:
-          message = "Sopa de Ternera. Estofado de pollo con verduras";
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
           break;
         case 4:
-          message =
-            "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
           break;
         case 5:
           message =
-            "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
           break;
         case 6:
-          message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         //semana azul
         case 9:
@@ -496,43 +497,43 @@ function updateSchedule(date) {
       break;
     case "Marzo":
       switch (currentDateNum) {
-        //semana roja
-        case 2:
-          message =
-            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
-          break;
-        case 3:
-          message =
-            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
-          break;
-        case 4:
-          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
-          break;
-        case 5:
-          message =
-            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
-          break;
-        case 6:
-          message =
-            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
-          break;
         //semana amarilla
-        case 9:
+        case 2:
           message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
           break;
-        case 10:
+        case 3:
           message = "Sopa de Ternera. Estofado de pollo con verduras";
           break;
-        case 11:
+        case 4:
           message =
             "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
           break;
-        case 12:
+        case 5:
           message =
             "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
           break;
-        case 13:
+        case 6:
           message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          break;
+        //semana roja
+        case 9:
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+          break;
+        case 10:
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          break;
+        case 11:
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          break;
+        case 12:
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+          break;
+        case 13:
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         //semana azul
         case 16:
@@ -599,43 +600,43 @@ function updateSchedule(date) {
           message =
             "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
           break;
-        //semana roja
-        case 13:
-          message =
-            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
-          break;
-        case 14:
-          message =
-            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
-          break;
-        case 15:
-          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
-          break;
-        case 16:
-          message =
-            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
-          break;
-        case 17:
-          message =
-            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
-          break;
         //semana amarilla
-        case 20:
+        case 13:
           message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
           break;
-        case 21:
+        case 14:
           message = "Sopa de Ternera. Estofado de pollo con verduras";
           break;
-        case 22:
+        case 15:
           message =
             "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
           break;
-        case 23:
+        case 16:
           message =
             "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
           break;
-        case 24:
+        case 17:
           message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          break;
+        //semana roja
+        case 20:
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+          break;
+        case 21:
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          break;
+        case 22:
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          break;
+        case 23:
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+          break;
+        case 24:
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         //semana azul
         case 27:
@@ -695,43 +696,43 @@ function updateSchedule(date) {
           message =
             "Guiso de lentejas. Croquetas de pescado al horno con ensalada";
           break;
-        //semana roja
-        case 18:
-          message =
-            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
-          break;
-        case 19:
-          message =
-            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
-          break;
-        case 20:
-          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
-          break;
-        case 21:
-          message =
-            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
-          break;
-        case 22:
-          message =
-            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
-          break;
         //semana amarilla
-        case 25:
+        case 18:
           message = "Crema de calabaza. Tortilla de calabacín y papas al horno";
           break;
-        case 26:
+        case 19:
           message = "Sopa de Ternera. Estofado de pollo con verduras";
           break;
-        case 27:
+        case 20:
           message =
             "Potaje de verduras y legumbres. Churros de pescado al horno con ensalada";
           break;
-        case 28:
+        case 21:
           message =
             "Tallarines con tomate natural. Pechuga de pavo a la plancha con zanahorias salteadas";
           break;
-        case 29:
+        case 22:
           message = "Crema de lentejas. Pescado en salsa con papas sancochadas";
+          break;
+        //semana roja
+        case 25:
+          message =
+            "Sopa de pescado. Pechuga de pollo a la plancha con ensalada";
+          break;
+        case 26:
+          message =
+            "Potaje de berros y judías pintas. Pescado al vapor con aliño de limón, ajo y perejil y papas sancochadas";
+          break;
+        case 27:
+          message = "Ensalada de caballa. Lomo asado con menestra de verduras";
+          break;
+        case 28:
+          message =
+            "Arroz con pollo y verduras. Tacos de pescado con ensalada natural";
+          break;
+        case 29:
+          message =
+            "Crema de verduras. Tortilla a Ia paisana con tomates aliñados";
           break;
         default:
           message = "Día no lectivo \u{1f3c4}";
