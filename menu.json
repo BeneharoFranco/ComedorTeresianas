@@ -1,10 +1,10 @@
 {
   "plantillas": {
     "azul": {
-      "1": "Potaje de lentejas Y verduras. Tortilla española al horno. Ensalada natural.",
-      "2": "Crema de calabaza. Croquetas de pollo al horno con menestra de verduras.",
-      "3": "Sopa de verduras Salmón a la plancha con verduras asadas y cuscús integral",
-      "4": "Puré de guisantes. Pizza casera con tomate natural",
+      "1": "Ensalada César. Pollo al horno con papas arrugadas.",
+      "2": "Potaje de lentejas con verduras. Tortilla española al horno con ensalada natural",
+      "3": "Crema de calabaza. Croquetas de pollo al horno con menestra de verduras.",
+      "4": "Sopa de verduras. Salmón a la plancha con verduras asadas y cuscús integral",
       "5": "Puré de guisantes. Pizza casera con tomate natural"
     },
     "celeste": {
