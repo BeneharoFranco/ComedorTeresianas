@@ -23,8 +23,8 @@ function updateSchedule(date) {
   const currentDateNum = date.getDate();
   const dayOfWeek = date.getDay(); // 1=Lunes, 2=Martes...
 
-  document.getElementById("currentDay").textContent =
-    `${currentDateNum} de ${currentMonth}, ${currentDayName} hay de menú:`;
+  document.getElementById("currentDay").innerHTML =
+    `Menú para el <br> ${currentDayName} ${currentDateNum} de ${currentMonth}`;
 
   let message = "Día no lectivo 🏄";
 
@@ -40,16 +40,18 @@ function updateSchedule(date) {
 
   // Opcional: Cambiar el color del mensaje según el color de la semana
   const colorsHex = {
-    "azul": "#e8f0fe",
-    "celeste": "#e0f7fa",
-    "verde": "#e8f5e9",
-    "roja": "#ffebee",
-    "amarilla": "#fffde7"
+    "azul": "#8cb3f5",
+    "celeste": "#aed9e0",
+    "verde": "#a8d5ba",
+    "roja": "#f2b1a1",
+    "amarilla": "#f9e2af"
   };
   if (colorAsignado) {
-    document.getElementById("subjectMessage").style.backgroundColor = colorsHex[colorAsignado] || "#e8f0fe";
+    document.getElementById("subjectMessage").style.backgroundColor = colorsHex[colorAsignado] || "#2e5c65";
+    document.getElementById("subjectMessage").style.color = "#424242ff";
   } else {
-    document.getElementById("subjectMessage").style.backgroundColor = "#e8f0fe";
+    document.getElementById("subjectMessage").style.backgroundColor = "#2e5c65";
+    document.getElementById("subjectMessage").style.color = "white";
   }
 }
 
