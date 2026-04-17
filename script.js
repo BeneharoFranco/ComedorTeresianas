@@ -4,6 +4,9 @@ let menuData = null;
 async function loadMenu() {
   try {
     const response = await fetch("menu.json");
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status} al cargar menu.json`);
+    }
     menuData = await response.json();
     updateSchedule(currentDate);
   } catch (error) {
@@ -15,7 +18,7 @@ async function loadMenu() {
 function updateSchedule(date) {
   if (!menuData) return;
 
-  const days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+  const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
   const currentMonth = months[date.getMonth()];
@@ -33,7 +36,10 @@ function updateSchedule(date) {
 
   // 2. Si hay color y es un día de entre semana (1-5), buscamos en la plantilla de ese color
   if (colorAsignado && dayOfWeek >= 1 && dayOfWeek <= 5) {
-    message = menuData.plantillas[colorAsignado][dayOfWeek];
+    const plantillaColor = menuData.plantillas[colorAsignado];
+    if (plantillaColor && plantillaColor[dayOfWeek]) {
+      message = plantillaColor[dayOfWeek];
+    }
   }
 
   document.getElementById("subjectMessage").textContent = message;
@@ -56,7 +62,7 @@ function updateSchedule(date) {
 }
 
 function updateDay(offset) {
-  if (offset == 0) currentDate = new Date();
+  if (offset === 0) currentDate = new Date();
   else currentDate.setDate(currentDate.getDate() + offset);
   updateSchedule(currentDate);
 }
