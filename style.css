@@ -68,3 +68,42 @@ button {
 button:hover {
   background-color: #1967d2;
 }
+
+#weekView {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.week-day {
+  flex: 1 1 150px;
+  max-width: 200px;
+  min-width: 140px;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background-color: #e8f0fe;
+  text-align: center;
+}
+
+.week-date {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1a73e8;
+  margin-bottom: 0.2rem;
+}
+
+.week-day-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1a73e8;
+  margin-bottom: 0.5rem;
+}
+
+.week-menu {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.3;
+}

@@ -1,5 +1,6 @@
 let currentDate = new Date();
 let menuData = null;
+let currentView = 'day';
 
 async function loadMenu() {
   try {
@@ -15,45 +16,50 @@ async function loadMenu() {
   }
 }
 
+const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+const colorHexMap = {
+  "azul": "#8cb3f5",
+  "celeste": "#aed9e0",
+  "verde": "#a8d5ba",
+  "roja": "#f2b1a1",
+  "amarilla": "#f9e2af"
+};
+
+function getMenuForDate(date) {
+  const monthName = months[date.getMonth()];
+  const dateNum = date.getDate();
+  const dayOfWeek = date.getDay();
+
+  const colorAsignado = menuData.calendario[monthName] ? menuData.calendario[monthName][dateNum] : null;
+
+  if (colorAsignado && dayOfWeek >= 1 && dayOfWeek <= 5) {
+    const plantillaColor = menuData.plantillas[colorAsignado];
+    if (plantillaColor && plantillaColor[dayOfWeek]) {
+      return { menu: plantillaColor[dayOfWeek], color: colorAsignado };
+    }
+  }
+  return { menu: "Día no lectivo 🏄", color: null };
+}
+
 function updateSchedule(date) {
   if (!menuData) return;
 
   const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-  const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
   const currentMonth = months[date.getMonth()];
   const currentDayName = days[date.getDay()];
   const currentDateNum = date.getDate();
-  const dayOfWeek = date.getDay(); // 1=Lunes, 2=Martes...
 
   document.getElementById("currentDay").innerHTML =
     `Menú para el <br> ${currentDayName} ${currentDateNum} de ${currentMonth}`;
 
-  let message = "Día no lectivo 🏄";
+  const { menu: message, color: colorAsignado } = getMenuForDate(date);
 
-  // 1. Buscamos el color asignado a este día en el calendario
-  const colorAsignado = menuData.calendario[currentMonth] ? menuData.calendario[currentMonth][currentDateNum] : null;
+  document.getElementById("subjectMessage").innerHTML = message.split('. ').join('.<br>');
 
-  // 2. Si hay color y es un día de entre semana (1-5), buscamos en la plantilla de ese color
-  if (colorAsignado && dayOfWeek >= 1 && dayOfWeek <= 5) {
-    const plantillaColor = menuData.plantillas[colorAsignado];
-    if (plantillaColor && plantillaColor[dayOfWeek]) {
-      message = plantillaColor[dayOfWeek];
-    }
-  }
-
-  document.getElementById("subjectMessage").textContent = message;
-
-  // Opcional: Cambiar el color del mensaje según el color de la semana
-  const colorsHex = {
-    "azul": "#8cb3f5",
-    "celeste": "#aed9e0",
-    "verde": "#a8d5ba",
-    "roja": "#f2b1a1",
-    "amarilla": "#f9e2af"
-  };
   if (colorAsignado) {
-    document.getElementById("subjectMessage").style.backgroundColor = colorsHex[colorAsignado] || "#2e5c65";
+    document.getElementById("subjectMessage").style.backgroundColor = colorHexMap[colorAsignado] || "#2e5c65";
     document.getElementById("subjectMessage").style.color = "#424242ff";
   } else {
     document.getElementById("subjectMessage").style.backgroundColor = "#2e5c65";
@@ -61,14 +67,81 @@ function updateSchedule(date) {
   }
 }
 
+function getMonday(date) {
+  const d = new Date(date);
+  const day = d.getDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setDate(d.getDate() + diff);
+  return d;
+}
+
+function updateWeekView(date) {
+  if (!menuData) return;
+
+  const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  const monday = getMonday(date);
+  const friday = new Date(monday);
+  friday.setDate(friday.getDate() + 4);
+  const monthStart = months[monday.getMonth()];
+  const monthEnd = months[friday.getMonth()];
+
+  document.getElementById("currentDay").innerHTML =
+    `Semana del ${monday.getDate()} de ${monthStart} al ${friday.getDate()} de ${monthEnd}`;
+
+  let html = "";
+  for (let i = 0; i < 5; i++) {
+    const day = new Date(monday);
+    day.setDate(day.getDate() + i);
+    const dayName = days[day.getDay()];
+    const dateNum = day.getDate();
+    const { menu: menuText, color } = getMenuForDate(day);
+
+    html += `
+      <div class="week-day"${color ? ` style="background-color: ${colorHexMap[color] || '#e8f0fe'}"` : ''}>
+        <div class="week-date">${dateNum}</div>
+        <div class="week-day-name">${dayName}</div>
+        <div class="week-menu">${menuText.split('. ').join('.<br>')}</div>
+      </div>`;
+  }
+
+  document.getElementById("weekView").innerHTML = html;
+}
+
+function toggleView() {
+  if (currentView === "day") {
+    currentView = "week";
+    document.getElementById("subjectMessage").style.display = "none";
+    document.getElementById("weekView").style.display = "";
+    document.getElementById("viewToggle").textContent = "Vista Diaria";
+    updateWeekView(currentDate);
+  } else {
+    currentView = "day";
+    document.getElementById("subjectMessage").style.display = "";
+    document.getElementById("weekView").style.display = "none";
+    document.getElementById("viewToggle").textContent = "Vista Semanal";
+    updateSchedule(currentDate);
+  }
+}
+
 function updateDay(offset) {
-  if (offset === 0) currentDate = new Date();
-  else currentDate.setDate(currentDate.getDate() + offset);
-  updateSchedule(currentDate);
+  if (offset === 0) {
+    currentDate = new Date();
+  } else if (currentView === "week") {
+    offset *= 7;
+  }
+  currentDate.setDate(currentDate.getDate() + offset);
+  if (currentView === "week") {
+    updateWeekView(currentDate);
+  } else {
+    updateSchedule(currentDate);
+  }
 }
 
 document.getElementById("prevDay").addEventListener("click", () => updateDay(-1));
 document.getElementById("nextDay").addEventListener("click", () => updateDay(1));
 document.getElementById("presentDay").addEventListener("click", () => updateDay(0));
+document.getElementById("viewToggle").addEventListener("click", toggleView);
+
+document.getElementById("weekView").style.display = "none";
 
 loadMenu();
