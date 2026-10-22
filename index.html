@@ -34,8 +34,13 @@
     <div>
     </div> -->
     <br>
-    <div>
-      <button id="viewToggle">Vista Semanal</button>
+    <div class="view-toggle">
+      <span id="labelDay" class="view-toggle-label active">Vista diaria</span>
+      <label class="switch">
+        <input type="checkbox" id="viewToggle" role="switch" aria-label="Vista semanal">
+        <span class="slider"></span>
+      </label>
+      <span id="labelWeek" class="view-toggle-label">Vista semanal</span>
     </div>
     <div id="weekView"></div>
     <br>

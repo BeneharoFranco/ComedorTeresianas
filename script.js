@@ -107,18 +107,19 @@ function updateWeekView(date) {
   document.getElementById("weekView").innerHTML = html;
 }
 
-function toggleView() {
-  if (currentView === "day") {
-    currentView = "week";
-    document.getElementById("subjectMessage").style.display = "none";
-    document.getElementById("weekView").style.display = "";
-    document.getElementById("viewToggle").textContent = "Vista Diaria";
+function setView(view) {
+  currentView = view;
+  const isWeek = view === "week";
+
+  document.getElementById("subjectMessage").style.display = isWeek ? "none" : "";
+  document.getElementById("weekView").style.display = isWeek ? "" : "none";
+  document.getElementById("viewToggle").checked = isWeek;
+  document.getElementById("labelDay").classList.toggle("active", !isWeek);
+  document.getElementById("labelWeek").classList.toggle("active", isWeek);
+
+  if (isWeek) {
     updateWeekView(currentDate);
   } else {
-    currentView = "day";
-    document.getElementById("subjectMessage").style.display = "";
-    document.getElementById("weekView").style.display = "none";
-    document.getElementById("viewToggle").textContent = "Vista Semanal";
     updateSchedule(currentDate);
   }
 }
@@ -140,8 +141,12 @@ function updateDay(offset) {
 document.getElementById("prevDay").addEventListener("click", () => updateDay(-1));
 document.getElementById("nextDay").addEventListener("click", () => updateDay(1));
 document.getElementById("presentDay").addEventListener("click", () => updateDay(0));
-document.getElementById("viewToggle").addEventListener("click", toggleView);
+document.getElementById("viewToggle").addEventListener("change", (event) => {
+  setView(event.target.checked ? "week" : "day");
+});
+document.getElementById("labelDay").addEventListener("click", () => setView("day"));
+document.getElementById("labelWeek").addEventListener("click", () => setView("week"));
 
-document.getElementById("weekView").style.display = "none";
+setView("day");
 
 loadMenu();
