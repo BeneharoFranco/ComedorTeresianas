@@ -88,6 +88,9 @@ function updateWeekView(date) {
   document.getElementById("currentDay").innerHTML =
     `Semana del ${monday.getDate()} de ${monthStart} al ${friday.getDate()} de ${monthEnd}`;
 
+  // Creamos una instancia de la fecha actual para comparar
+  const today = new Date();
+
   let html = "";
   for (let i = 0; i < 5; i++) {
     const day = new Date(monday);
@@ -95,12 +98,18 @@ function updateWeekView(date) {
     const dayName = days[day.getDay()];
     const dateNum = day.getDate();
     const { menu: menuText, color } = getMenuForDate(day);
+    
+    // Comprobamos si el día del bucle coincide con el día de hoy
+    const isToday = 
+      day.getDate() === today.getDate() &&
+      day.getMonth() === today.getMonth() &&
+      day.getFullYear() === today.getFullYear();
 
     html += `
       <div class="week-day"${color ? ` style="background-color: ${colorHexMap[color] || '#e8f0fe'}"` : ''}>
-        <div class="week-date">${dateNum}</div>
-        <div class="week-day-name">${dayName}</div>
-        <div class="week-menu">${menuText.split('. ').join('.<br>')}</div>
+        <div class="week-date">${isToday ? `<strong>${dateNum}</strong>` : dateNum}</div>
+        <div class="week-day-name">${isToday ? `<strong>${dayName}</strong>` : dayName}</div>
+        <div class="week-menu">${isToday ? `<strong>${menuText.split('. ').join('.<br>')}</strong>` : menuText.split('. ').join('.<br>')}</div>
       </div>`;
   }
 
