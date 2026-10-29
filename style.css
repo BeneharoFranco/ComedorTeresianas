@@ -23,6 +23,45 @@ body {
   line-height: 1.4;
 }
 
+.copyright a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Página de privacidad */
+.legal {
+  text-align: left;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.legal h1 {
+  text-align: center;
+}
+
+.legal h2 {
+  font-size: 1.15rem;
+  color: #244673;
+  margin-top: 1.5rem;
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+}
+
+.legal li {
+  margin-bottom: 0.4rem;
+}
+
+.legal a {
+  color: #1a73e8;
+}
+
+.legal .back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
 .container {
   background-color: white;
   padding: 2rem;
