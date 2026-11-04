@@ -106,10 +106,10 @@ function updateWeekView(date) {
       day.getFullYear() === today.getFullYear();
 
     html += `
-      <div class="week-day"${color ? ` style="background-color: ${colorHexMap[color] || '#e8f0fe'}"` : ''}>
-        <div class="week-date">${isToday ? `<strong>${dateNum}</strong>` : dateNum}</div>
-        <div class="week-day-name">${isToday ? `<strong>${dayName}</strong>` : dayName}</div>
-        <div class="week-menu">${isToday ? `<strong>${menuText.split('. ').join('.<br>')}</strong>` : menuText.split('. ').join('.<br>')}</div>
+      <div class="week-day${isToday ? ' is-today' : ''}"${color ? ` style="background-color: ${colorHexMap[color] || '#e8f0fe'}"` : ''}${isToday ? ' aria-current="date"' : ''}>
+        <div class="week-date">${dateNum}</div>
+        <div class="week-day-name">${dayName}</div>
+        <div class="week-menu">${menuText.split('. ').join('.<br>')}</div>
       </div>`;
   }
 

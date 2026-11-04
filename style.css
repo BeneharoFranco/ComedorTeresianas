@@ -225,3 +225,16 @@ button:hover {
   color: #333;
   line-height: 1.3;
 }
+
+/* Día actual: recuadro + texto más grueso, sin depender de la fuente del móvil */
+.week-day.is-today {
+  box-shadow: inset 0 0 0 3px #1a73e8;
+}
+
+.week-day.is-today .week-date,
+.week-day.is-today .week-day-name,
+.week-day.is-today .week-menu {
+  font-weight: 900;
+  -webkit-text-stroke: 0.35px currentColor;
+  paint-order: stroke fill;
+}
