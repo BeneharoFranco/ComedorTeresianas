@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7fb">
+  <meta name="description" content="Consulta el menú diario y semanal del comedor de Teresianas.">
   <title>Menú Teresianas</title>
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
@@ -14,14 +16,14 @@
 
 <body>
 
-  <div class="container">
+  <main class="container">
     <h1 id="currentDay"></h1>
     <div id="subjectMessage"></div>
     <br>
-    <div>
-      <button id="prevDay">◀️</button>
-      <button id="presentDay">Hoy<br>🍽️</button>
-      <button id="nextDay">▶️</button>
+    <div class="day-controls">
+      <button id="prevDay" aria-label="Día anterior"><img class="day-arrow" src="arrow-double.svg" alt="" aria-hidden="true"></button>
+      <button id="presentDay" aria-label="Volver al menú de hoy">Hoy<br>🍽️</button>
+      <button id="nextDay" aria-label="Día siguiente"><img class="day-arrow day-arrow-next" src="arrow-double.svg" alt="" aria-hidden="true"></button>
     </div>
     <!-- <br>
     <div>
@@ -35,14 +37,14 @@
       </label>
       <span id="labelWeek" class="view-toggle-label">Vista semanal</span>
     </div>
-    <div id="weekView"></div>
+    <div id="weekView" aria-live="polite"></div>
     <!-- <br>
     <div><a href="https://laspalmas.escuelateresiana.com/wp-content/uploads/2025/09/MENU-2025-2026.COLEGIO-SANTA-TERESA-DE-JESUS.pdf" target="_blank" rel="noopener noreferrer"> Descargar aquí el menú en
         PDF 📚</a></div> -->
     <br>
     <div><a href='https://t.me/+aQBWeTOerSVhNjVk'>Avisos de cambios en la web, y reporte de errores <img
           src='telegrama.png' alt='Telegram'></a></div>
-  </div>
+  </main>
   <p class="copyright">Beneharo Franco Alonso.<br>Todos los derechos reservados.<br>&copy; 2025-2026<br><a href="privacidad.html">Privacidad y cookies</a></p>
   <script src="script.js"></script>
 </body>
