@@ -10,6 +10,7 @@ Aplicación web estática para consultar el menú diario del comedor escolar en 
 - Mensaje para días no lectivos o sin menú asignado.
 - Color de fondo dinámico según el color de la semana.
 - Datos desacoplados en `menu.json` para facilitar la actualización del curso.
+- Instalación como aplicación web progresiva (PWA) y consulta del último menú descargado sin conexión.
 
 ## Tecnologías
 
@@ -48,6 +49,14 @@ python -m http.server 8000
 ```
 
 Después abre: [http://localhost:8000](http://localhost:8000)
+
+## Instalar como aplicación (PWA)
+
+La aplicación incluye un manifiesto, iconos y un service worker que guarda los archivos principales y el último `menu.json` descargado para poder abrirla sin conexión.
+
+Para probar la instalación, sirve la web desde `localhost` o publícala mediante HTTPS; abrir `index.html` directamente como archivo no permite activar el service worker. En un navegador compatible, usa la opción **Instalar aplicación** o **Añadir a pantalla de inicio**.
+
+Al actualizar los recursos de la PWA, cambia la versión de caché en `service-worker.js` para que el navegador sustituya la caché anterior.
 
 ## Formato de datos (`menu.json`)
 

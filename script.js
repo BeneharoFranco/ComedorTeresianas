@@ -201,3 +201,10 @@ setView("day");
 loadMenu();
 updateSeasonalSnow();
 window.setInterval(updateSeasonalSnow, 30 * 60 * 1000);
+
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .catch((error) => console.error('No se pudo activar el modo sin conexión:', error));
+  });
+}
