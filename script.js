@@ -159,3 +159,10 @@ document.getElementById("labelWeek").addEventListener("click", () => setView("we
 setView("day");
 
 loadMenu();
+
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .catch((error) => console.error('No se pudo activar el modo sin conexión:', error));
+  });
+}
