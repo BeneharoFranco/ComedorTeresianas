@@ -26,6 +26,46 @@ const colorHexMap = {
   "amarilla": "#f9e2af"
 };
 
+function updateSeasonalSnow(now = new Date()) {
+  const snowLayer = document.getElementById("seasonalSnow");
+  const menuContainer = document.querySelector(".container");
+  let seasonYear = now.getFullYear();
+
+  if (now.getMonth() === 0 && now.getDate() <= 7) seasonYear--;
+
+  const start = new Date(seasonYear, 11, 1);
+  const end = new Date(seasonYear + 1, 0, 8);
+
+  if (now < start || now >= end) {
+    snowLayer.classList.remove("is-active");
+    menuContainer.classList.remove("seasonal-pattern");
+    return;
+  }
+
+  if (!snowLayer.dataset.flakesCreated) {
+    const flakes = document.createDocumentFragment();
+    for (let i = 0; i < 36; i++) {
+      const flake = document.createElement("span");
+      const duration = 7 + Math.random() * 11;
+      flake.className = "snowflake";
+      flake.style.setProperty("--flake-left", `${Math.random() * 100}%`);
+      flake.style.setProperty("--flake-size", `${3 + Math.random() * 5}px`);
+      flake.style.setProperty("--flake-duration", `${duration.toFixed(1)}s`);
+      flake.style.setProperty("--flake-delay", `${(-Math.random() * duration).toFixed(1)}s`);
+      flake.style.setProperty("--flake-drift-a", `${Math.round((Math.random() - 0.5) * 110)}px`);
+      flake.style.setProperty("--flake-drift-b", `${Math.round((Math.random() - 0.5) * 150)}px`);
+      flake.style.setProperty("--flake-drift", `${Math.round((Math.random() - 0.5) * 190)}px`);
+      flake.style.setProperty("--flake-opacity", `${(0.35 + Math.random() * 0.55).toFixed(2)}`);
+      flakes.appendChild(flake);
+    }
+    snowLayer.appendChild(flakes);
+    snowLayer.dataset.flakesCreated = "true";
+  }
+
+  snowLayer.classList.add("is-active");
+  menuContainer.classList.add("seasonal-pattern");
+}
+
 function getMenuForDate(date) {
   const monthName = months[date.getMonth()];
   const dateNum = date.getDate();
@@ -159,3 +199,5 @@ document.getElementById("labelWeek").addEventListener("click", () => setView("we
 setView("day");
 
 loadMenu();
+updateSeasonalSnow();
+window.setInterval(updateSeasonalSnow, 30 * 60 * 1000);

@@ -17,6 +17,39 @@
 
 * { box-sizing: border-box; }
 
+.seasonal-snow {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.seasonal-snow.is-active { visibility: visible; opacity: 1; }
+
+.snowflake {
+  position: absolute;
+  top: -12px;
+  left: var(--flake-left);
+  width: var(--flake-size);
+  height: var(--flake-size);
+  border-radius: 50%;
+  background: #fff;
+  opacity: var(--flake-opacity);
+  box-shadow: 0 0 5px rgba(255,255,255,.72);
+  animation: snowflake-fall var(--flake-duration) linear var(--flake-delay) infinite;
+}
+
+@keyframes snowflake-fall {
+  0% { transform: translate(0, -12px); }
+  32% { transform: translate(var(--flake-drift-a), 32vh); }
+  67% { transform: translate(var(--flake-drift-b), 67vh); }
+  100% { transform: translate(var(--flake-drift), 105vh); }
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -29,6 +62,8 @@ body {
 }
 
 .container {
+  position: relative;
+  z-index: 1;
   width: min(100%, 760px);
   padding: clamp(22px, 5vw, 40px);
   border: 1px solid color-mix(in srgb, var(--complementary) 34%, white);
@@ -36,6 +71,16 @@ body {
   background: var(--surface-container);
   box-shadow: var(--shadow);
   text-align: center;
+}
+
+.container.seasonal-pattern {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 38px, rgba(164, 27, 42, .30) 38px 67px, transparent 67px 88px, rgba(24, 78, 51, .30) 88px 108px, transparent 108px 138px),
+    repeating-linear-gradient(90deg, transparent 0 38px, rgba(164, 27, 42, .30) 38px 67px, transparent 67px 88px, rgba(24, 78, 51, .30) 88px 108px, transparent 108px 138px),
+    repeating-linear-gradient(0deg, transparent 0 11px, rgba(194, 158, 73, .72) 11px 14px, rgba(30, 45, 68, .58) 14px 16px, transparent 16px 64px, rgba(194, 158, 73, .68) 64px 67px, transparent 67px 138px),
+    repeating-linear-gradient(90deg, transparent 0 11px, rgba(194, 158, 73, .72) 11px 14px, rgba(30, 45, 68, .58) 14px 16px, transparent 16px 64px, rgba(194, 158, 73, .68) 64px 67px, transparent 67px 138px),
+    repeating-linear-gradient(135deg, transparent 0 8px, rgba(30, 45, 68, .08) 8px 9px, transparent 9px 16px),
+    linear-gradient(#f7f3e9, #f7f3e9);
 }
 
 h1 {
@@ -208,7 +253,7 @@ button:focus-visible, a:focus-visible, .switch input:focus-visible + .slider {
 }
 img { width: 26px; vertical-align: middle; }
 
-.copyright { margin: 22px 0 0; color: #fff; text-align: center; font-size: .85rem; line-height: 1.6; text-shadow: 0 1px 3px rgba(0, 0, 0, .45); }
+.copyright { position: relative; z-index: 1; margin: 22px 0 0; color: #fff; text-align: center; font-size: .85rem; line-height: 1.6; text-shadow: 0 1px 3px rgba(0, 0, 0, .45); }
 .copyright a, a { color: var(--primary); }
 .copyright a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
@@ -230,4 +275,5 @@ img { width: 26px; vertical-align: middle; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .snowflake { display: none; }
 }
